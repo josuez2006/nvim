@@ -1,14 +1,32 @@
+
+" space to down
+nmap ñ o<C-j>
+nmap Ñ O<C-j>
+
+" move in mode insert
+imap <C-h> <C-j>i
+imap <C-l> <C-j>la
+
+" Change $ to º
+nmap º $
+vmap º $
+
+" Move selected line / block of text in visual mode
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
+
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
 nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
-inoremap jk <Esc>
+" I hate esc
+inoremap <C-j> <Esc>
 
 " Easy CAPS
-inoremap <c-u> <ESC>viwUi
-nnoremap <c-u> viwU<Esc>
+inoremap <c-e> <ESC>viwUi
+nnoremap <c-e> viwU<Esc>
 
 " TAB in general mode will move to text buffer
 nnoremap <TAB> :bnext<CR>
@@ -18,9 +36,10 @@ nnoremap <S-TAB> :bprevious<CR>
 " Alternate way to save
 nnoremap <C-s> :w<CR>
 " Alternate way to quit
-nnoremap <C-Q> :wq!<CR>
-" Use control-c instead of escape
-nnoremap <C-c> <Esc>
+nnoremap <C-w> :wq!<CR>
+" Quit
+nnoremap <C-x> :q<CR>
+
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
